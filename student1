@@ -82,6 +82,27 @@ def student4():
         print(f"Дані студента {surname} успішно додано у файл.") # успішне повідомлення
     except Exception as e: # обробка винятків
         print("Помилка під час запису:", e) # повідомлення про помилку
+
+# Автор: Лозовська Роксана
+# Фінальна відповідь
+def student5():
+    surname = "Лозовська Роксана"
+    answer = ("Для відкриття файлів у Python використовують конструкцію "
+              "with open(...) as. Щоб прочитати вміст файлу, застосовують методи "
+              "read(), readline() або readlines() залежно від потреби.")
+    question = "-"  # останній студент
+    filename = "question.txt"
+
+    try:
+        with open(filename, "a", encoding="utf-8") as file: # відкриття у режимі додавання
+            file.write("\n------------------------------------\n")
+            file.write(f"Студент: {surname}\n")
+            file.write(f"Відповідь: {answer}\n")
+            file.write(f"Питання: {question}\n")
+        print(f"Дані студента {surname} успішно додано у файл.") # успішне повідомлення
+    except Exception as e: # обробка винятків
+        print("Помилка під час запису:", e) # повідомлення про помилку
+
 # Основна функція для поетапного виконання всіх студентів
 if __name__ == "main":
    
@@ -90,3 +111,4 @@ if __name__ == "main":
     student2()
     student3()
     student4()
+    student5()
