@@ -64,7 +64,21 @@ def student3():
         print("Помилка під час запису:", e) # повідомлення про помилку
 
 
-if __name__ == "__main__":
-    student1()
-    student2()
-    student3()
+# Автор: Писана Ольга
+# Додає відповідь і нове питання
+def student4():
+    surname = "Писана Ольга"
+    answer = ("Власну функцію створюють за допомогою ключового слова def. "
+              "Вона може приймати параметри й повертати результат через оператор return. "
+              "Наприклад: def add(a, b): return a + b")
+    question = "Як у Python відкрити файл і прочитати його вміст?"
+    filename = "question.txt"
+    try: 
+        with open(filename, "a", encoding="utf-8") as file: # відкриття у режимі додавання
+            file.write("\n------------------------------------\n")
+            file.write(f"Студент: {surname}\n")
+            file.write(f"Відповідь: {answer}\n")
+            file.write(f"Питання: {question}\n")
+        print(f"Дані студента {surname} успішно додано у файл.") # успішне повідомлення
+    except Exception as e: # обробка винятків
+        print("Помилка під час запису:", e) # повідомлення про помилку
