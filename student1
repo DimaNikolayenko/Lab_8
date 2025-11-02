@@ -1,0 +1,24 @@
+# Автор: Ніколаєнко Дмитро
+# Роль: перший студент
+# Програма створює текстовий файл і записує у нього питання з обробкою винятків
+
+def student1():
+    surname = "Ніколаєнко Дмитро"
+    question = ("Як у Python працювати з рядками: знайти довжину, змінити регістр, "
+                "порахувати кількість певного символу?")
+    filename = "question.txt"
+
+    try:
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(f"Студент: {surname}\n")
+            file.write(f"Питання: {question}\n")
+        print(f"Питання студента {surname} записано у файл '{filename}' успішно.")
+    except FileNotFoundError:
+        print("Помилка: не знайдено шлях до файлу.")
+    except PermissionError:
+        print("Помилка: немає дозволу на запис у файл.")
+    except Exception as e:
+        print("Інша помилка:", e)
+
+if __name__ == "__main__":
+    student1()
